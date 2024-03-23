@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content = "width=device-width,initial-scale=1.0">
+<title>Inviting you</title>
+<style>
+	body{
+	margin: 0;
+	padding: 0;
+	background:url('istockphoto-1482984658-640x640.jpg') no-repeat center center fixed;
+	background-size: cover;
+	background:repeat:no-repeat;
+	background-attachment: fixed;
+	font-family: Cursive;
+	animation: animateBackground 20s linear infinite;
+	}
+	.container{
+	text-align:center;
+	padding-top: 100px;
+	}
+	input[type="text"]{
+	padding:10px;
+	margin:10px;
+	font-size:16px;
+	font-family: Cursive;
+	border:1px solid black;
+	border-radius: 5px;
+	}
+	input[type="submit"]{
+	padding:10px 20px;
+	font-size:18px;
+	background-color:#a9cce3;
+	border:1px solid black;
+	cursor:pointer;
+	border-radius: 5px;
+	font-family: Cursive;
+	}
+	h1{
+	animation:fadeInUp 2s ease-in-out;	
+	}
+	@keyframes fadeInUp{
+		0%{
+			opacity: 0;
+			transform: translateY(50px);
+		}
+		100%{
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	@keyframes	animateBackground{
+		0%{
+			background-position: 0% 0%;
+		}
+		100%{
+			background-position: 100% 0%;
+		}
+	} 
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1>The wait is Over!!</h1>
+		<p>Please enter your name here :</p>
+		<form id="invitationForm" method="POST">
+			<input type="text" id="guestName" name= "guest_name" placeholder="Enter your name" required>
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<script>
+		document.getElementById('invitationForm').addEventListener('submit',function(event){
+			var guestName = document.getElementById('guestName').value;
+			var actionURL = "second_page.html?guest_name="+encodeURIComponent(guestName);
+			this.action = actionURL;
+		});
+	</script>
+</body>
+</html>
