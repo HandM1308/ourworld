@@ -71,9 +71,11 @@
 	</div>
 	<script>
 		document.getElementById('invitationForm').addEventListener('submit',function(event){
+			event.preventDefault();
 			var guestName = document.getElementById('guestName').value;
 			var actionURL = "second_page.html?guest_name="+encodeURIComponent(guestName);
-			this.action = actionURL;
+			window.location.href=actionURL;
+			//this.action = actionURL;
 		});
 	</script>
 </body>
