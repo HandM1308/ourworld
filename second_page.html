@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content = "width=device-width,initial-scale=1.0">
+<title>Inviting you</title>
+</head>
+<style>
+	body{
+	margin: 0;
+	padding: 0;
+	background-image:url('istockphoto-1482984658-640x640.jpg');
+	background-size: cover;
+	background:repeat:no-repeat;
+	overflow-y:scroll;
+	background-attachment: fixed;
+	font-family: Cursive;
+	}
+	.container{
+	text-align:center;
+	padding-top: 100px;
+	}
+	.cartoon-image{
+	height:auto;
+	width:150px;
+	border-radius : 10px;
+	border : 1px solid black;
+	margin:20px;
+	cursor:pointer;
+	}
+</style>
+<body>
+	<div class="container">
+		<h1>Welcome to our Wedding!!</h1>
+		
+		<h4 id="welmsg"></h4>
+		<h4 id="welmsg1"></h4>
+		<div>
+			<img class="cartoon-image" src="groom.jpg" alt="Groom" id="groomimage">
+			<img class="cartoon-image" src="bride.jpg" alt="Bride" id="brideimage">
+		</div>
+		<div id="details"></div>
+	</div>
+	
+	<script>
+		function getParameterByName(name,url){
+			if(!url) url = window.location.href;
+			name = name.replace(/[\[\]]/g,'\\$&');
+			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),results = regex.exec(url);
+			if(!results) return null;
+			if(!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g,''));
+			}
+			console.log(name);
+		var guestName = getParameterByName('guest_name');
+		document.getElementById('welmsg').innerText = "Dear " + guestName + ", want to know whos is the bride and who is the groom?";
+		document.getElementById('welmsg1').innerText = "Then why are you waiting click on the below images and see the magic";
+		console.log(guestName);
+		document.getElementById('groomimage').addEventListener('click',function(){
+			document.getElementById('details').innerHTML = "<h2> Hari </h2><img src='image1.jpg' alt='Groom Image' style='border-radius : 10px;height:auto;width:250px;border : 1px solid black;'>";
+		});
+		document.getElementById('brideimage').addEventListener('click',function(){
+			document.getElementById('details').innerHTML = "<h2> Manasa </h2><img src='image2.jpg' alt ='Bride Image' style= 'border-radius : 10px;height:auto;width:250px;border : 1px solid black;'>";
+		});
+		</script>
+		
+</body>
+</html>
