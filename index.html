@@ -104,8 +104,8 @@
 		document.getElementById('invitationForm').addEventListener('submit',function(event){
 			var guestName = document.getElementById('guestName').value;
 			var actionURL = "second_page.html?guest_name="+encodeURIComponent(guestName);
-			//this.action = actionURL;
-			window.location.href=actionURL;
+			this.action = actionURL;
+			//window.location.href=actionURL;
 		});
 	</script>
 </body>
