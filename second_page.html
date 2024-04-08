@@ -75,12 +75,13 @@
 }
 </style>
 <body>
+	<div>
 	<form id="invitationForm" method="POST" action="thirdpage.html">
 	<div class="container">
 		<h1>Welcome to our World!!</h1>	
 		<h4 id="welmsg"></h4>
 		<h4 id="welmsg1"></h4>
-		</div>
+	</div>
 		<div>
 			<tr>
 			<td><img class="cartoon-image" src="bride.jpg" alt="Bride" id="brideimage"></td>
@@ -90,7 +91,14 @@
 			<button class="button-55" type="submit" >Click me to know<br> When?</button>
 		</div>
 	</form>
+</div>
 	<script>
+		document.getElementById('invitationForm').addEventListener('submit',function(event){
+			event.preventDefault();
+			var actionURL = "thirdpage.html.html;
+			window.location.href=actionURL;
+			//this.action = actionURL;
+		});
 		function getParameterByName(name,url){
 			if(!url) url = window.location.href;
 			name = name.replace(/[\[\]]/g,'\\$&');
