@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content = "width=device-width,initial-scale=1.0">
-<title>Inviting you</title>
+<title>#TogetherForever</title>
 </head>
 <style>
 	body{
 	margin: 0;
 	padding: 0;
-	background-image:url('istockphoto-1482984658-640x640.jpg');
+	background-image:url('page2bg.png');
 	background-size: cover;
 	background:repeat:no-repeat;
 	overflow-y:scroll;
@@ -23,25 +23,72 @@
 	.cartoon-image{
 	height:auto;
 	width:150px;
-	border-radius : 10px;
+	border-radius : 100px;
 	border : 1px solid black;
-	margin:20px;
+	margin:50px;
 	cursor:pointer;
+	position:relative;
+	top:-40px;
+	left:365px;
 	}
+.button-55 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  position:relative;
+  top:-50px;
+  left:550px;
+  }
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
 </style>
 <body>
+	<form id="invitationForm" method="POST" action="thirdpage.html">
 	<div class="container">
-		<h1>Welcome to our Wedding!!</h1>
-		
+		<h1>Welcome to our World!!</h1>	
 		<h4 id="welmsg"></h4>
 		<h4 id="welmsg1"></h4>
-		<div>
-			<img class="cartoon-image" src="groom.jpg" alt="Groom" id="groomimage">
-			<img class="cartoon-image" src="bride.jpg" alt="Bride" id="brideimage">
 		</div>
-		<div id="details"></div>
-	</div>
-	
+		<div>
+			<tr>
+			<td><img class="cartoon-image" src="bride.jpg" alt="Bride" id="brideimage"></td>
+			<td><img class="cartoon-image" src="groom.jpg" alt="Groom" id="groomimage"></td>
+			</tr>
+			<div id="details"></div>
+			<button class="button-55" >Click me to know<br> When?</button>
+		</div>
 	<script>
 		function getParameterByName(name,url){
 			if(!url) url = window.location.href;
@@ -53,15 +100,40 @@
 			}
 			console.log(name);
 		var guestName = getParameterByName('guest_name');
-		document.getElementById('welmsg').innerText = "Dear " + guestName + ", want to know whos is the bride and who is the groom?";
+		document.getElementById('welmsg').innerText = "Dear " + guestName + ", want to know who is the bride and who is the groom?";
 		document.getElementById('welmsg1').innerText = "Then why are you waiting click on the below images and see the magic";
 		console.log(guestName);
 		document.getElementById('groomimage').addEventListener('click',function(){
-			document.getElementById('details').innerHTML = "<h2> Hari </h2><img src='image1.jpg' alt='Groom Image' style='border-radius : 10px;height:auto;width:250px;border : 1px solid black;'>";
+			document.getElementById('details').innerHTML = "<h2 id='text1' style= 'position:relative;left:585px;top:-60px;'> Hari </h2><img id='img1' src='image1.jpg' alt='Groom Image' style='border-radius : 10px;position:relative;left:500px;height:auto;width:250px;border : 1px solid black;top:-60px;' onload='displayimg();displaytext();'>";
 		});
 		document.getElementById('brideimage').addEventListener('click',function(){
-			document.getElementById('details').innerHTML = "<h2> Manasa </h2><img src='image2.jpg' alt ='Bride Image' style= 'border-radius : 10px;height:auto;width:250px;border : 1px solid black;'>";
+			document.getElementById('details').innerHTML = "<h2 id='text2' style= 'position:relative;left:580px;top:-60px;'> Manasa </h2><img id='img2' src='image2.jpg' alt ='Bride Image' style= 'border-radius : 10px;height:auto;width:250px;border : 1px solid black;position:relative;left:500px;top:-60px;' onload='displayimg1();displaytext1();' >";
 		});
+
+		function displayimg(){
+			var img = document.getElementById('img1');
+			setTimeout(function(){
+			img.style.display = 'none';
+			},2500);
+		}
+		function displayimg1(){
+			var img = document.getElementById('img2');
+			setTimeout(function(){
+			img.style.display = 'none';
+			},2500);
+		}
+		function displaytext(){
+			var img = document.getElementById('text1');
+			setTimeout(function(){
+			img.style.display = 'none';
+			},2500);
+		}
+		function displaytext1(){
+			var img = document.getElementById('text2');
+			setTimeout(function(){
+			img.style.display = 'none';
+			},2500);
+		}
 		</script>
 		
 </body>
