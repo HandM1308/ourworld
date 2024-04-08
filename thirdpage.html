@@ -152,7 +152,8 @@
 	
 	<script>
 		function displayhashtags(){
-			//document.getElementById(clk).style.display='none';
+			var c = document.getElementById(clk);
+			c.style.display = 'none';
 			const hashtags = document.querySelectorAll('.hashtag');
 			let delay= 500;
 			hashtags.forEach(hashtag => {setTimeout(()=> {
