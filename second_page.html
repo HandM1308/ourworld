@@ -76,7 +76,7 @@
 </style>
 <body>
 	<div>
-	<form id="formhm" method="POST">
+	<form id="formhm" method="POST" action="thirdpage.html>
 	<div class="container">
 		<h1>Welcome to our World!!</h1>	
 		<h4 id="welmsg"></h4>
@@ -93,12 +93,6 @@
 	</form>
 </div>
 	<script>
-		document.getElementById('formhm').addEventListener('submit',function(event){
-			event.preventDefault();
-			var actionURL = "thirdpage.html;
-			window.location.href=actionURL;
-			this.action = actionURL;
-		});
 		function getParameterByName(name,url){
 			if(!url) url = window.location.href;
 			name = name.replace(/[\[\]]/g,'\\$&');
